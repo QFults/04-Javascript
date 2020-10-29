@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
-  
-  <h1 id="count">0</h1>
-  <button id="increment">+</button>
-  <button id="decrement">-</button>
+  <h1 id="nameDisp"></h1>
+
+  <form>
+    <input id="name" type="text" placeholder="John Doe">
+    <button id="btn">Click Me</button>
+  </form>
 
   <script>
-    let count = 0
 
-    document.getElementById('increment').addEventListener('click', () => {
-        count++
-        document.getElementById('count').textContent = count
+
+    document.getElementById('btn').addEventListener('click', (event) => {
+      event.preventDefault()
+
+      document.getElementById('nameDisp').textContent = document.getElementById('name').value
+
+      document.getElementById('name').value = ''
     })
-
-    document.getElementById('decrement').addEventListener('click', () => {
-      count--
-      document.getElementById('count').textContent = count
-    })
-
   </script>
 </body>
+
 </html>
